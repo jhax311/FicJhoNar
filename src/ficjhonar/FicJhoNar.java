@@ -22,7 +22,9 @@ public class FicJhoNar {
                 //crea un fichero reader
                 try (FileReader fileLeer = new FileReader(archivo)) {
                     BufferedReader bF = new BufferedReader(fileLeer);
+                    //con get name sacamos el nombre del fichero
                     System.out.println("El contenido de "+ archivo.getName()+" es: ");
+                    //mientras que la lectura de linea sea !null imprime 
                     while ((txt = bF.readLine()) != null) {
                         System.out.println(txt);
                     }
