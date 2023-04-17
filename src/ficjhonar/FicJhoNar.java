@@ -13,11 +13,13 @@ public class FicJhoNar {
         File[] archivosApli = archivos.listFiles();
         for (File archivo : archivosApli) {
             System.out.printf("Nombre: %s %n", archivo);
-            //se llama a si mismo por si tiene subdirectorios
+            //se llama a si mismo por si es subdirectorio
             if (archivo.isDirectory()) {
                 imprimir(archivo);
+                //si es fichero
             } else if (archivo.isFile()) {
                 String txt = "";
+                //crea un fichero reader
                 try (FileReader fileLeer = new FileReader(archivo)) {
                     BufferedReader bF = new BufferedReader(fileLeer);
                     System.out.println("El contenido de "+ archivo.getName()+" es: ");
@@ -27,7 +29,6 @@ public class FicJhoNar {
                 } catch (IOException e) {
                     System.out.println("Error al leer el archivo: " + archivo.getName());
                 }
-
             }
         }
     }
